@@ -25,6 +25,10 @@ import AddSchoolImagesForm from "./components/dashboard/AddSchoolImagesForm";
 import ComparePage from "./components/pages/ComparePage";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Error404 from "./components/pages/404"
+import JellyFish from "./components/pages/eastereggz/404jelly"
+import FractalTree404 from "./components/pages/eastereggz/404tree"
+import FractalTreeBackground from "./components/pages/eastereggz/404tree2"
+import DynamicBackground from "./components/pages/eastereggz/404noise"
 
 
 const queryClient = new QueryClient({
@@ -71,10 +75,13 @@ const App = () => {
           <CompareProvider>
             <Routes>
             <Route path="*" element={<Error404 />} />
+              <Route path="/jelly" element={<JellyFish />} />
+              <Route path="/tree" element={<FractalTree404 />} />
+              <Route path="/tree-2" element={<FractalTreeBackground />} />
+              <Route path="/noise" element={<DynamicBackground />} />
               <Route path="/" element={<LandingPage />} />
-             
 
-              <Route path="/add" element={<AddSchoolImagesForm />}>
+              <Route path="/addschoolimages" element={<AddSchoolImagesForm />}>
                 <Route index element={<Navigate to="home" replace />} />
                
 
