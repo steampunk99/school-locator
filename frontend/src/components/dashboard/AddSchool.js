@@ -105,7 +105,7 @@ export default function AddSchoolModal({ isOpen, onClose, onSchoolAdded }) {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/schools/add", formData, {
+      await axios.post("https://school-locator.onrender.com/api/schools/add", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

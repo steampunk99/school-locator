@@ -48,7 +48,7 @@ const SchoolManagement = () => {
 
   const fetchSchools = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/schools');
+      const response = await axios.get('https://school-locator.onrender.com/api/schools');
       setSchools(response.data);
       setLoading(false);
     } catch (err) {
@@ -69,7 +69,7 @@ const SchoolManagement = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/schools/${id}`);
+      await axios.delete(`https://school-locator.onrender.com/api/schools/${id}`);
       setSchools(schools.filter(school => school.id !== id));
       toast({
         title: "Success",
@@ -91,14 +91,14 @@ const SchoolManagement = () => {
 
     try {
       if (currentSchool) {
-        await axios.put(`http://localhost:5000/api/schools/${currentSchool.id}`, schoolData);
+        await axios.put(`https://school-locator.onrender.com/api/schools/${currentSchool.id}`, schoolData);
         setSchools(schools.map(school => school.id === currentSchool.id ? { ...school, ...schoolData } : school));
         toast({
           title: "Success",
           description: "School updated successfully",
         });
       } else {
-        const response = await axios.post('http://localhost:5000/api/schools', schoolData);
+        const response = await axios.post('https://school-locator.onrender.com/api/schools', schoolData);
         setSchools([...schools, response.data]);
         toast({
           title: "Success",

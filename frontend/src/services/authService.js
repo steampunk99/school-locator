@@ -1,7 +1,7 @@
 export const authService = {
   
   register: async (userData) => {
-    const response = await fetch('http://localhost:5000/api/auth/register', {
+    const response = await fetch('https://school-locator.onrender.comapi/auth/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(userData),
@@ -14,7 +14,7 @@ export const authService = {
   },
 
     login: async (credentials) => {
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch('https://school-locator.onrender.comapi/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(credentials),
@@ -32,7 +32,7 @@ export const authService = {
       if (!token) return null;
       
       try {
-        const response = await fetch('http://localhost:5000/api/auth/me', {
+        const response = await fetch('https://school-locator.onrender.comapi/auth/me', {
           headers: { 
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'

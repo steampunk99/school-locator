@@ -27,7 +27,7 @@ const SchoolProfile = () => {
     const fetchSchoolData = async () => {
       try {
         console.log('Fetching school with ID:', id); // Debug log
-        const response = await axios.get(`http://localhost:5000/api/schools/${id}`);
+        const response = await axios.get(`https://school-locator.onrender.com/api/schools/${id}`);
         
         if (response.data.success) {
           console.log('School data received:', response.data); // Debug log

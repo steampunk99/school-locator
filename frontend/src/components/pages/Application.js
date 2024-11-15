@@ -84,7 +84,7 @@ const ApplicationForm = ({ school, onClose }) => {
       setIsSubmitting(true);
       
       // Submit application
-      const applicationRes = await fetch('http://localhost:5000/api/schools/application/submit', {
+      const applicationRes = await fetch('https://school-locator.onrender.com/api/schools/application/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -113,7 +113,7 @@ const ApplicationForm = ({ school, onClose }) => {
     try {
       setIsSubmitting(true);
       
-      const paymentRes = await fetch('http://localhost:5000/api/schools/application/pay', {
+      const paymentRes = await fetch('https://school-locator.onrender.com/api/schools/application/pay', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

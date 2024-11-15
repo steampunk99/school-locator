@@ -70,7 +70,7 @@ const SearchResults = () => {
       }
 
       const queryString = new URLSearchParams(activeParams).toString();
-      const response = await fetch(`http://localhost:5000/api/schools/search?${queryString}`);
+      const response = await fetch(`https://school-locator.onrender.com/api/schools/search?${queryString}`);
       const data = await response.json();
       
       if (data.success) {

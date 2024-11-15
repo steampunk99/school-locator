@@ -23,7 +23,7 @@ const AddSchoolImagesForm = ({ onSuccess }) => {
     const fetchSchools = async () => {
       try {
         console.log('Fetching schools...');
-        const response = await axios.get('http://localhost:5000/api/schools');
+        const response = await axios.get('https://school-locator.onrender.com/api/schools');
         console.log('Schools response:', response.data);
         
         // Check if response.data.data exists, otherwise use response.data
@@ -78,7 +78,7 @@ const AddSchoolImagesForm = ({ onSuccess }) => {
       });
 
       const response = await axios.post(
-        `http://localhost:5000/api/schools/${selectedSchoolId}/gallery`,
+        `https://school-locator.onrender.com/api/schools/${selectedSchoolId}/gallery`,
         formData,
         {
           headers: {
