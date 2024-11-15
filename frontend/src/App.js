@@ -24,7 +24,7 @@ import AddSchoolForm from "./components/dashboard/AddSchool";
 import AddSchoolImagesForm from "./components/dashboard/AddSchoolImagesForm";
 import ComparePage from "./components/pages/ComparePage";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
+import Error404 from "./components/pages/404"
 
 
 const queryClient = new QueryClient({
@@ -70,10 +70,13 @@ const App = () => {
         <SmoothScroll>
           <CompareProvider>
             <Routes>
+            <Route path="*" element={<Error404 />} />
               <Route path="/" element={<LandingPage />} />
+             
 
               <Route path="/add" element={<AddSchoolImagesForm />}>
                 <Route index element={<Navigate to="home" replace />} />
+               
 
                 <Route
                   path="home"

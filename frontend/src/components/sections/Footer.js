@@ -45,7 +45,7 @@ export default function Footer() {
                 "hover:text-primary transition-colors duration-300",
                 darkMode ? "text-muted-foreground" : "text-gray-600"
               )}>About</a></li>
-              <li><a href="#" className={cn(
+              <li><a href="/contact" className={cn(
                 "hover:text-primary transition-colors duration-300",
                 darkMode ? "text-muted-foreground" : "text-gray-600"
               )}>Contact us</a></li>
